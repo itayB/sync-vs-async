@@ -1,0 +1,19 @@
+
+[project]
+name = "sync-server"
+version = "0.1.0"
+description = "A Flask web server"
+
+dependencies = [
+  "flask==3.1.2",
+  "uwsgi==2.0.31",
+]
+
+[build-system]
+requires = ["setuptools>=75.8", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+markers = [
+    "settings: Provide custom Settings instance for the test client",
+]

@@ -1,0 +1,25 @@
+services:
+  async_web:
+    build:
+      context: ./async_web
+      dockerfile: Dockerfile
+    container_name: async_web
+  sync_web:
+    build:
+      context: ./sync_web
+      dockerfile: Dockerfile
+    container_name: sync_web
+  tester_async:
+    build:
+      context: ./tester
+      dockerfile: Dockerfile
+    container_name: tester_async
+    environment:
+      - BASE_URL=http://async_web:5001
+  tester_sync:
+    build:
+      context: ./tester
+      dockerfile: Dockerfile
+    container_name: tester_sync
+    environment:
+      - BASE_URL=http://sync_web:5001
