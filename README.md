@@ -30,3 +30,7 @@ docker compose down
 ## Summary
 
 This setup helps visualize how async Python servers can handle high concurrency more gracefully than traditional sync WSGI servers, which may drop requests under pressure.
+
+---
+
+Inspired by real-world production issues with WSGI servers dropping requests under load, as described in the accompanying [Medium post](https://medium.com/@itay-bittan/invisible-failures-the-python-server-mistake-we-made-in-production-7d20f144c480).
